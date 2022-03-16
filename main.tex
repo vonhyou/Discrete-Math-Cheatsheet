@@ -1,0 +1,173 @@
+% This template is made by Shuo Feng, for academic use.
+
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage[letterpaper, total={7in, 9in}]{geometry}
+
+% For multi cols
+\usepackage{multicol}
+% For set signs
+\usepackage{mathtools}
+
+% Use LaTeX font EB Garamond
+% https://tug.org/FontCatalogue/ebgaramond/
+\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usepackage{ebgaramond-maths}
+\usepackage[T1]{fontenc}
+% Font usage end
+  
+\title{\scshape{Discrete Math Cheat Sheet}}
+\author{vonhyou}
+\date{Feb. 17, 2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{multicols}{2}
+[
+\section{Function, Sets and Relations}
+A \textbf{function} from set $ \mathbb{A} $ to set $ \mathbb{B} $ is a mapping such that every $ a \in \mathbb{A} $ is mapped to a unique $ b \in \mathbb{B} $ . A \textbf{set} is a collection of distinct objects. The \textbf{Cartesian Product} of sets $ \mathbb{A} $ and $ \mathbb{B} $ is the set of all pairs whose first component is from $ \mathbb{A} $ and second component is from $ \mathbb{B} $. We define \textbf{n-ary relation} R as a subset of an n-product, if n = 2 we call R a (binary) relation $ \mathbb{R} \subseteq \mathbb{A}_1 \times \mathbb{A}_2 $. If $ \mathbb{A}_1 = \mathbb{A}_2  = \mathbb{A}$ we call \textbf{R is a relation on A}.
+] 
+
+\begin{enumerate}
+  \item Examples of defining function
+    \begin{flalign} \nonumber
+        & f =  \{(n, |n| + 2) : n \in \mathbb{Z} \} && \\\nonumber
+        & f \; :  \; \mathbb{Z} \rightarrow \mathbb{N} && \\\nonumber
+        & \qquad n \mapsto |n| + 2 
+    \end{flalign}
+    
+  \item Ways to define a function
+    \begin{itemize}
+      \item Directly (a = 1, b = 2)
+      \item Piece wise
+      \item Mathematical expressions ( $x \mapsto cos(x)$ )
+      \item From existing functions 
+    \end{itemize}
+    
+  \item Domain, Codomain and Range
+    \begin{itemize}
+      \item Domain/ Range: The input/ output set
+      \item Codomain: The set contains the output set
+    \end{itemize}
+  \item Well-defined functions \\
+    The function is defined for \textbf{all inputs}, and every input has a unique output. Use \textit{vertical line test}
+  \item Boolean functions
+    \begin{flalign} \nonumber
+      and: \; & \mathbb{B} \times \mathbb{B} \rightarrow \mathbb{B} && \\\nonumber
+              & (0, 0) \mapsto 0, (0, 1) \mapsto 0 && \\\nonumber
+              & (1, 0) \mapsto 0, (1, 1) \mapsto 1 
+    \end{flalign}
+  \item Injective, Surjective and Bijective
+    \begin{itemize}
+      \item Injective: One-by-one, \textit{horizontal line test}
+      \item Surjective: Onto, every output has input(s)
+      \item Bijective: One-by-one and onto
+    \end{itemize}
+  \item Prove surjective: $ g(m, n) = (a, b) = (m + n, 2m + n) $ . We get $ m = b - a $ and $ n = 2a - b $ . For any, so surjective.
+  \item Rational(fractions): $ \mathbb{Q} = \{ \frac{a}{b} \; | \; a, b \in \mathbb{Z} \} $
+  \item Subset $ \subseteq $ and \textbf{Proper} subset $ \subset $
+  \item \textbf{Cardinality}: The number of elements in the set
+  \item Union: $ \cup $, Intersection: $ \cap $, Difference \textbackslash
+  \item \textbf{Power set}: The set of all subsets
+  \item A pair with \textbf{components} a and b is (a, b) 
+  \item \textbf{Cartesian Product}: $ \mathbb{A} \times \mathbb{B} $ \\
+    $ |\mathbb{A} \times \mathbb{B}| = |\mathbb{A}| \times |\mathbb{B}| $
+  \item \textbf{n-tuple} is a pair of n components 
+  \item \textbf{n-product} is the Cartesian product of n sets
+  \item Relation as a direct graph is a pair of \textbf{vertices} (dots) and edges.
+  \item Direct graph, edges have direction. 
+  \item Relations
+    \begin{itemize}
+      \item Reflexive: $ \forall a \in \mathbb{A} \Rightarrow (a, a) \in \mathbb{R} $
+      \item Symmetric: $ \forall (a, b) \in \mathbb{R} \Rightarrow (b, a) \in \mathbb{R} $
+      \item Transitive: $ (a, b) \; and \; (b, c) \in \mathbb{R} \Rightarrow (a, c) \in \mathbb{R} $
+    \end{itemize}
+  \item Closures
+    \begin{itemize}
+        \item Reflexive Closure: $ \mathbb{S} = \mathbb{R} \cup \{(a, a)\; |\; a \in \mathbb{A} \} $
+        \item Symmetric Closure: $ \mathbb{S} = \mathbb{R} \cup \mathbb{R}^{-1} $ 
+        \item Transitive Closure: Remember to check if newly added edges creates new connected pair.
+        \item Equivalence Closure: Reflexive, symmetric and transitive.
+    \end{itemize}
+  \item \textbf{Vacuous Truth}
+\end{enumerate} 
+
+\end{multicols}
+
+\begin{multicols}{2}
+[
+\section{Logic and Proof}
+\textbf{Propositional logic} studies ways to of joining and/or modifying entire propositions, statements or sentences to form more complicated of them.
+]
+
+\begin{enumerate}
+  \item A \textbf{proposition} or a \textbf{statement} is a sentence that is either true or false but not both.
+  \item A \textbf{proposition} is $ P $, and an \textbf{open proposition (sentence)} is $P(x)$. \textbf{Atomic} propositions cannot be simplify. \textbf{Compound} propositions combine atomic propositions using logical operators.
+  \item Logical connectives \\
+    \begin{tabular}{|l|c|c|}
+    \hline
+    Negation      & $\neg$             & not                          \\ \hline
+    Conjunction   & $\land$            & and                          \\ \hline
+    Disjunction   & $\lor$             & or                           \\ \hline
+    Exclusive or  & $\oplus$           & xor (but not both happen)    \\ \hline
+    Conditional   & $\Rightarrow$      & if then (implies)            \\ \hline
+    Biconditional & $\Leftrightarrow$  & iff (if and only if)         \\ \hline
+    \end{tabular}
+  \item $ P\Rightarrow Q = \neg P \lor Q$
+  \item $ P\Rightarrow Q $, P is sufficient for Q. Q is a necessary condition for P. P cannot be true if Q is false.
+  \item Concepts related to truth table
+    \begin{itemize}
+      \item Logically equivalent: $P \Leftrightarrow Q$ is a tautology
+      \item Contradiction: Always false
+      \item Contingency: Neither tautology nor contradiction
+      \item Contrapositive: $P \Rightarrow Q = \neg Q \Rightarrow \neg P$
+    \end{itemize}
+  \item \textbf{Literal}: Total number of appearances of each variable. $\neg PQR+RS$ has 5 literals.
+  \item \textbf{Optimal}: Has fewest number of literals
+  \item Rules of Inference
+    \begin{itemize}
+      \item Modus Ponens: $P \Rightarrow Q$, P is true, so Q is true
+      \item Modus Tollens: $P \Rightarrow Q$, Q is false, so P is false
+      \item Elimination: $P \lor Q$, P is false, so Q is true
+    \end{itemize}
+  \item Karnaugh Map: Remember Gray Codes
+  \item If we have the implication $P \Rightarrow Q$
+    \begin{itemize}
+      \item \textbf{Converse}: $Q \Rightarrow P$
+      \item \textbf{Contrapositive}: $\neg Q \Rightarrow \neg P$
+    \end{itemize}
+  \item A \textbf{theorem} is a statement that can be (has been) verified as true. A \textbf{proof} of a theorem shows how.
+  \item A \textbf{proposition} is a theorem that may not be as important as another theorems. A \textbf{lemma} is a theorem whose purpose is to prove another theorem. A \textbf{corollary} is a result that is an immediate consequence of a theorem.
+  \item Typical proof steps
+    \begin{itemize}
+      \item Start with \textbf{premise} (assumption)
+      \item Build off the premise by deduction or inference
+      \item Conclusion
+    \end{itemize}
+  \item Types of Direct Proofs
+    \begin{itemize}
+      \item Proof by cases: Categorize discussion
+      \item Proof using sets
+      \item Proof via example
+    \end{itemize}
+  \item Types of Indirect Proofs
+    \begin{itemize}
+        \item \textbf{Contrapositive}: Assume $\neg Q$, if works, $\neg P$
+        \item \textbf{Contradiction}: Assume $\neg P$, if works, $Q \land \neg Q$
+        \item \textbf{TFAE}: "The following are equivalent" means all statements are true (or false)
+    \end{itemize}
+  \item Induction and Strong Induction
+    \begin{itemize}
+      \item Base case: P(n) is true for $n = n_0$ 
+      \item Hypothesis: Assume P(k) is true for $k \geq n_0$
+      \item Steps: Prove P(k+1) is true using P(K)
+    \end{itemize}
+  
+\end{enumerate}
+
+\end{multicols}
+
+\end{document}
