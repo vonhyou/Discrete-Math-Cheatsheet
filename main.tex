@@ -12,14 +12,14 @@
 
 % Use LaTeX font EB Garamond
 % https://tug.org/FontCatalogue/ebgaramond/
-\usepackage[cmintegrals,cmbraces]{newtxmath}
-\usepackage{ebgaramond-maths}
-\usepackage[T1]{fontenc}
+%\usepackage[cmintegrals,cmbraces]{newtxmath}
+%\usepackage{ebgaramond-maths}
+%\usepackage[T1]{fontenc}
 % Font usage end
   
 \title{\scshape{Discrete Math Cheat Sheet}}
 \author{vonhyou}
-\date{Feb. 17, 2022}
+\date{Apr. 07, 2022}
 
 \begin{document}
 
@@ -166,6 +166,28 @@ A \textbf{function} from set $ \mathbb{A} $ to set $ \mathbb{B} $ is a mapping s
       \item Steps: Prove P(k+1) is true using P(K)
     \end{itemize}
   
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2}
+[
+\section{Combinatorics}
+Counting Principles and Inclusion Exclusion, Permutations, Combinations, and the Binomial Theorem, Pigeonhole Principles
+]
+
+\begin{enumerate}
+    \item Addition and subtraction principles
+    \item Multiplication and Division Principles
+    \item Inclusion-Exclusion Principle
+    \item Permutation: $P(n, k)=n!/(n - k)!$
+    \item Combination: $C(n, k) = P(n, k)/k!$
+    \item Binomial Theorem: $(x+y)^n=\sum^{n}_{k=0}{\binom{n}{k}x^{n-k}y^k}$
+    \item Pascal's Triangle: $\binom{n + 1}{k} = \binom{n}{k - 1} + \binom{n}{k}$
+    \item $\binom{n}{k} = \binom{n}{n - k}$, and $\sum^n_{k = 0}{\binom{n}{k}} = 2^n$
+    \item Pigeonhole Principle: We have n + 1 items and we want to put them in n boxes. Then one box must contain at lease 2 items.
+    \item Strong Pigeonhole Principle Corollary: Let $n$ and $r$ be positive integers. If $n(r - 1) + 1$ objects are distributed into $n$ boxes, then at least one of the boxes contains $r$ or more of the objects.
+
 \end{enumerate}
 
 \end{multicols}
